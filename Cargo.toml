@@ -1,0 +1,18 @@
+[package]
+name = "service_bridge_template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+make87 = "*"
+make87_messages = "*"
+ros2-client = "0.7.6"
+ros2-interfaces-rolling = { version = "*", features = ["example_interfaces"] }
+tokio = { version = "1.40.0", features = ["rt", "rt-multi-thread", "macros"] }
+uuid = "1.11.0"
+
+[profile.release]
+strip = true # Automatically strip symbols from the binary.
+lto = true
+opt-level = "z" # Optimize for size.
+codegen-units = 1 # Enable for further build optimizations at the cost of no parallelism

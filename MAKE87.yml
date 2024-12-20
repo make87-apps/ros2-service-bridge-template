@@ -1,0 +1,12 @@
+build_kit:
+  name: rust
+  version: latest
+provider_endpoints:
+  - name: PROVIDER_ENDPOINT
+    requester_message_type: make87_messages.spatial.translation.translation_2d
+    provider_message_type: make87_messages.spatial.translation.translation_1d
+requester_endpoints:
+  - name: REQUESTER_ENDPOINT
+    requester_message_type: ros2_interfaces_rolling.example_interfaces.srv.AddTwoIntsReq
+    provider_message_type: ros2_interfaces_rolling.example_interfaces.srv.AddTwoIntsRes
+needs_host_network: true
